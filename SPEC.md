@@ -76,6 +76,34 @@ Unsigned:
 
 Signed:
 
+#### Strings
+Strings are UTF8 encoded by default.
+
+##### Concatenation
+Strings can be concatenated as is with the `+` operator:
+
+```
+print("Hello " + "World!")
+```
+
+outputs:
+
+```
+Hello World!
+```
+
+Strings can also be concatenated with a space in the middle by using the `++`
+operator:
+
+```
+print("Hello" ++ "World!")
+```
+
+outputs:
+
+```
+Hello World!
+```
 
 ## Arithmetic Expressions
 You can use the following arithmetic operators:
@@ -94,6 +122,63 @@ You can use the following arithmetic operators:
 <!-- ## Precedence -->
 
 ## Loops
+
+### Infinite loop
+This loop will loop indefinitely by default, but can be broken out of with
+`break`.
+
+```
+loop {
+    print("I loop forever!")
+}
+```
+
+### for loop
+This loop will iterate over any iterable type:
+
+```
+names = ["John", "Kerry", "Sophia", "Delilah"]
+for name in names {
+    print(name)
+}
+```
+
+prints:
+
+```
+John
+Kerry
+Sophia
+Delilah
+```
+
+### while loop
+This loop will execute only if the expression give is true:
+
+```
+i = 0
+while (i < 10) {
+    print("i = " ++ i)
+    i++
+}
+print("done!")
+```
+
+prints:
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+done!
+```
 
 ### do while loop
 This loop will execute once, then only execute the following times if a
