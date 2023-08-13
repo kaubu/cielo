@@ -1,5 +1,12 @@
 # Cielo Specification
 
+## Inspirations
+
+* Rust
+* Python
+* Haskell
+* C
+
 ## Variables
 ### Names
 There is no set format, though it is recommended that you keep it in
@@ -52,6 +59,24 @@ age := 42
 birth_year i32 := 1907
 ```
 
+### Types
+
+#### Integers
+Integers can be represented by the following types:
+
+* `int` – type alias for `i32`
+
+Unsigned:
+
+* u8
+* u16
+* u32
+* u64
+* u128
+
+Signed:
+
+
 ## Arithmetic Expressions
 You can use the following arithmetic operators:
 
@@ -59,6 +84,46 @@ You can use the following arithmetic operators:
 * `-` – The subtraction operator | `7 - 2` returns `5`
 * `*` – The multiplication operator | `2 * 4` returns `8`
 * `/` – The division operator
-    * `10 / 3` returns `3` if they are both integers, and `2.0` if one or both
+    * `10 / 5` returns `2` if they are both integers, and `2.0` if one or both
       are floats
-    * `9
+    * `1 / 3` returns `0` if they are both integers, and `0.333333 (etc)` if
+      one or both are floats
+
+
+
+<!-- ## Precedence -->
+
+## Loops
+
+### do while loop
+This loop will execute once, then only execute the following times if a
+condition is met:
+
+```
+i := 1
+do while (false) {
+    print(i)
+    i++
+}
+```
+
+prints:
+
+```
+1
+```
+
+### with expression
+You can use a `with` expression to do some functionality only **once** before a
+loop starts, even if the loop doesn't execute due to conditions failing.
+
+Variables declared within this expression are available only within the `with`
+expression, the `while` expression, and the main loop body.
+
+This is mostly used to emulate the `for` loops of other languages, wherein
+there exists a variable.
+
+### for loops from other languages
+To emulate `for` loops from other languages, by chaining a `with` expression
+for the initialization of variables, a `while` or `do while` loop (for the
+condition checking), 
